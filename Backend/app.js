@@ -24,6 +24,12 @@ app.use(cors(
     config.application.cors.server
   ));
 
+
+ // rutas backend
+const rutasRoutes = require('./rutas/empresa');
+const clientesRoutes = require('./rutas/clientes');
+const proveedorRoutes = require('./rutas/proveedor');
+
   app.set('port', process.env.PORT || 3000);
 
   app.use(morgan('dev'));
@@ -40,9 +46,10 @@ app.use(express.urlencoded({extended: false}));
 
 
 
+
+
   //inicializando el server
 app.listen(app.get('port'), () =>{
     console.log("PUERTO 3000");
 });
 
- 
